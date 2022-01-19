@@ -35,4 +35,9 @@ Prepare os arquivos para comparação, renomeando o arquivo com material padrão
 "NOMEARQUIVO_PRD.wav" (arquivo com material padrão)
 "NOMEARQUIVO_QST.wav" (arquivo com material questionado)
 
+Coloque os arquivos no diretório de trabalho NOME_DIRETORIO. Não se preocupe com a codificação, numero de canais, frequencia de amostragem ou qualquer outra configuração do arquivo de áudio, basta o arquivo ter a extensão de um tipo de áudio.
+
+Abra o matlab e execute o arquivo "R00_Executa_Toda_CFL_v1.m".
+
+Aguarde o fim dos cálculos e confira os resultados no diretório "data_dir" criado no NOME_DIRETORIO.
 

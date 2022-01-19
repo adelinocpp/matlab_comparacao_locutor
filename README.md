@@ -43,7 +43,7 @@ Prepare os arquivos para comparação, renomeando o arquivo com material padrão
 
 Coloque os arquivos no diretório de trabalho NOME_DIRETORIO. 
 
-__Nota:__ Não se preocupe com a codificação, número de canais, frequencia de amostragem ou qualquer outra configuração do arquivo de áudio, basta o arquivo ter a extensão de um tipo de áudio listado na [wikipedia]<https://en.wikipedia.org/wiki/Audio_file_format>
+__Nota:__ Não se preocupe com a codificação, número de canais, frequencia de amostragem ou qualquer outra configuração do arquivo de áudio, basta o arquivo ter a extensão de um tipo de áudio listado na [wikipedia](https://en.wikipedia.org/wiki/Audio_file_format)
 
 Abra o matlab e execute o arquivo "R00_Executa_Toda_CFL_v1.m".
 

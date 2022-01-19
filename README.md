@@ -2,10 +2,10 @@
 
 Utiliza as técnicas GMM-UBM, i-vefor e fuzzy i-vector.
 
-__autor:__ Adelino Pinheiro Silva
+__autor:__ Adelino Pinheiro Silva\
 __email:__ adelinocpp@yahoo.com
 
-# h2 Informações: 
+## Informações: 
 
 1. Testado no MATLAB R2017 64-bits para linux.
 
@@ -19,21 +19,21 @@ $ sudo apt install sox
 Crie um diretório para comparação com o nome que desejar, por exemplo, "NOME_DIRETORIO". Efite utilizar espeços e caracteres especiais no nome dos arquivos e diretórios.
 
 ```
-../NOME_DIRETORIO\
-    /- R00_Executa_Toda_CFL_v1.m\
-    /- R01_Calcula_fi_vectors_v0.m\
+../NOME_DIRETORIO
+    /- R00_Executa_Toda_CFL_v1.m
+    /- R01_Calcula_fi_vectors_v0.m
     ...
-    / - S00_Space_To_Underscore.sh\
+    / - S00_Space_To_Underscore.sh
 ```
 
 descompacte o arquivo config.zip no mesmo diretŕorio de NOME_DIRETORIO, ficando
 ```
-../config\
-../NOME_DIRETORIO\
-    /- R00_Executa_Toda_CFL_v1.m\
-    /- R01_Calcula_fi_vectors_v0.m\
-    ...\
-    / - S00_Space_To_Underscore.sh\
+../config
+../NOME_DIRETORIO
+    /- R00_Executa_Toda_CFL_v1.m
+    /- R01_Calcula_fi_vectors_v0.m
+    ...
+    / - S00_Space_To_Underscore.sh
 ```
 
 Prepare os arquivos para comparação, renomeando o arquivo com material padrão adicionando o sufixo _PDR (antes da extensão) e o do material questionado com o sufixo _QST. Por exemplo:

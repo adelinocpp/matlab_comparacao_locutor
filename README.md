@@ -14,16 +14,25 @@ $ sudo apt install sox
 
 Utilização:
 
-Crie um diretório para comparação com o nome que desejar, por exemplo, "NOME_DIRETORIO".
+Crie um diretório para comparação com o nome que desejar, por exemplo, "NOME_DIRETORIO". Efite utilizar espeços e caracteres especiais no nome dos arquivos e diretórios.
 
 ../NOME_DIRETORIO
     /- R00_Executa_Toda_CFL_v1.m
+    /- R01_Calcula_fi_vectors_v0.m
+    ...
+    / - S00_Space_To_Underscore.sh
 
-Compara arquivos de áudio com registro de locutores
+descompacte o arquivo config.zip no mesmo diretŕorio de NOME_DIRETORIO, ficando
+../config
+../NOME_DIRETORIO
+    /- R00_Executa_Toda_CFL_v1.m
+    /- R01_Calcula_fi_vectors_v0.m
+    ...
+    / - S00_Space_To_Underscore.sh
 
-Padrão dos arquivos:
+Prepare os arquivos para comparação, renomeando o arquivo com material padrão adicionando o sufixo _PDR (antes da extensão) e o do material questionado com o sufixo _QST. Por exemplo:
 
-"NOMEARQUIVO_PRD.wav"
-"NOMEARQUIVO_QST.wav"
+"NOMEARQUIVO_PRD.wav" (arquivo com material padrão)
+"NOMEARQUIVO_QST.wav" (arquivo com material questionado)
 
 

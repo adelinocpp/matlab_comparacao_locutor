@@ -41,3 +41,4 @@ Abra o matlab e execute o arquivo "R00_Executa_Toda_CFL_v1.m".
 
 Aguarde o fim dos cálculos e confira os resultados no diretório "data_dir" criado no NOME_DIRETORIO.
 
+Interpretando resultados...

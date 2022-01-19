@@ -1,8 +1,8 @@
 clearvars; close all; clc;
-addpath('../../Bibliotecas/apstools');
-addpath('../../Bibliotecas/s2nr');
-addpath('../../Bibliotecas/voicebox');
-addpath('../../Bibliotecas/MSR Identity Toolkit v1.0/code');
+addpath('../config/Bibliotecas/apstools');
+addpath('../config/Bibliotecas/s2nr');
+addpath('../config/Bibliotecas/voicebox');
+addpath('../config/Bibliotecas/MSR Identity Toolkit v1.0/code');
 set(0, 'DefaultFigureVisible', 'off');
 breakLine = '-------------------------------------------------------------------';
 % --- Paleta de cores -----------------------------------------------------

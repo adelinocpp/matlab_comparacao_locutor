@@ -20,20 +20,20 @@ Crie um diretório para comparação com o nome que desejar, por exemplo, "NOME_
 
 ```
 ../NOME_DIRETORIO
-    /- R00_Executa_Toda_CFL_v1.m
-    /- R01_Calcula_fi_vectors_v0.m
+    /R00_Executa_Toda_CFL_v1.m
+    /R01_Calcula_fi_vectors_v0.m
     ...
-    / - S00_Space_To_Underscore.sh
+    /S00_Space_To_Underscore.sh
 ```
 
 descompacte o arquivo config.zip no mesmo diretŕorio de NOME_DIRETORIO, ficando
 ```
 ../config
 ../NOME_DIRETORIO
-    /- R00_Executa_Toda_CFL_v1.m
-    /- R01_Calcula_fi_vectors_v0.m
+    /R00_Executa_Toda_CFL_v1.m
+    /R01_Calcula_fi_vectors_v0.m
     ...
-    / - S00_Space_To_Underscore.sh
+    /S00_Space_To_Underscore.sh
 ```
 
 Prepare os arquivos para comparação, renomeando o arquivo com material padrão adicionando o sufixo _PDR (antes da extensão) e o do material questionado com o sufixo _QST. Por exemplo:

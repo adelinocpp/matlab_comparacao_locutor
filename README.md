@@ -32,7 +32,7 @@ descompacte o arquivo config.zip no mesmo diretŕorio de NOME_DIRETORIO, ficando
 
 Prepare os arquivos para comparação, renomeando o arquivo com material padrão adicionando o sufixo _PDR (antes da extensão) e o do material questionado com o sufixo _QST. Por exemplo:
 
-"NOMEARQUIVO_PRD.wav" (arquivo com material padrão)
+"NOMEARQUIVO_PDR.wav" (arquivo com material padrão)
 "NOMEARQUIVO_QST.wav" (arquivo com material questionado)
 
 Coloque os arquivos no diretório de trabalho NOME_DIRETORIO. Não se preocupe com a codificação, numero de canais, frequencia de amostragem ou qualquer outra configuração do arquivo de áudio, basta o arquivo ter a extensão de um tipo de áudio.

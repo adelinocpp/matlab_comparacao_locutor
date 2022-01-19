@@ -1,18 +1,21 @@
-Rotina unificada para comparação de locutores.
+#Markdown
+
+#h1 Rotina unificada para comparação de locutores.
 
 Utiliza as técnicas GMM-UBM, i-vefor e fuzzy i-vector.
 
-autor: Adelino Pinheiro Silva
-email: adelinocpp@yahoo.com
+__autor:__ Adelino Pinheiro Silva
+__email:__ adelinocpp@yahoo.com
 
-Informações: 
-Testado no MATLAB R2017 64-bits para linux.
+#h2 Informações: 
 
-Necessita da instalação do sox, que pode ser realizada via comando:
+1. Testado no MATLAB R2017 64-bits para linux.
+
+2. Necessita da instalação do sox, que pode ser realizada via comando:
 
 $ sudo apt install sox
 
-Utilização:
+#h2 Utilização:
 
 Crie um diretório para comparação com o nome que desejar, por exemplo, "NOME_DIRETORIO". Efite utilizar espeços e caracteres especiais no nome dos arquivos e diretórios.
 

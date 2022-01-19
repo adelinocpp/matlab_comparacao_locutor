@@ -10,5 +10,5 @@ Compara arquivos de áudio com registro de locutores
 
 Padrão dos arquivos:
 
-FOO_PRD.wav
-FOO_QST.wav
+"NOMEARQUIVO_PRD.wav"
+"NOMEARQUIVO_QST.wav"

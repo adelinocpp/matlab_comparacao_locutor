@@ -1,4 +1,3 @@
-% TODO: Ajustar a rotina, ou seja, TUDO
 close all;
 addpath('../config/Bibliotecas/apstools/');
 addpath('../config/Bibliotecas/WBdnnfunctions/');
@@ -8,13 +7,13 @@ addpath('../config/Bibliotecas/voicebox/');
 pwdData = split(pwd,'/');
 fileResult = [OUT_DIR, sprintf('Resultado_%s_fivector.txt',pwdData{end})];
 % -------------------------------------------------------------------------
-if (exist(fileResult,'file')  && ~BOOL_RECOMPUTE_EXAM)
+if (exist(fileResult,'file')  && ~BOOL_RECOMPUTE_EXAM  && ~isempty(dir(fileResult)) )
     fprintf('Arquivo %s já existe. Etapa já realizada.\nPara realizar novamente esta etapa remova-o\nou indique a variável BOOL_RECOMPUTE_EXAM para true.\n',fileResult)
     return,
 end
 fRes = fopen(fileResult,'w+');
 % -------------------------------------------------------------------------
-DATA_DIR = '../fivectorDATA/';
+DATA_DIR = '../config/fivectorDATA/';
 % -------------------------------------------------------------------------
 % -------------------------------------------------------------------------
 load([DATA_DIR,'PARAMETROS.mat']);

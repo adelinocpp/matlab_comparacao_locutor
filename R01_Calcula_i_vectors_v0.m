@@ -6,13 +6,13 @@ addpath('../config/Bibliotecas/voicebox/');
 pwdData = split(pwd,'/');
 fileResult = [OUT_DIR, sprintf('Resultado_%s_ivector.txt',pwdData{end})];
 % -------------------------------------------------------------------------
-if (exist(fileResult,'file')  && ~BOOL_RECOMPUTE_EXAM)
+if (exist(fileResult,'file')  && ~BOOL_RECOMPUTE_EXAM && ~isempty(dir(fileResult)) )
     fprintf('Arquivo %s já existe. Etapa já realizada.\nPara realizar novamente esta etapa remova-o\nou indique a variável BOOL_RECOMPUTE_EXAM para true.\n',fileResult)
     return,
 end
 fRes = fopen(fileResult,'w+');
 % -------------------------------------------------------------------------
-DATA_DIR = '../ivectorDATA/';
+DATA_DIR = '../config/ivectorDATA/';
 % -------------------------------------------------------------------------
 load([DATA_DIR,'PARAMETROS.mat']);
 load([DATA_DIR,'Base_UBM_mfcc.mat']);

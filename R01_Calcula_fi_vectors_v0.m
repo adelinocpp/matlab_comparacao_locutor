@@ -167,7 +167,7 @@ else
         end
         fprintf('\tFinalizado.\n');
     end
-    save(PARAMETROS.structFileName,'str_Files','PARAMETROS','ivScores','-v7.3');
+    save(PARAMETROS.structFileName,'PARAMETROS','-v7.3');
     save(STRING_FILENAME,'str_Files','-v7.3');
     fprintf('Fim do cálculo dos vetores no método fuzzy i-vector...\n')
 end

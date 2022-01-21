@@ -33,9 +33,26 @@ audioExt = {'.3gp','.aa','.aac','.aax','.act','.aiff','.amr','.ape','.au',...
             '.vox','.wav','.wma','.wv','.webm','.8svx'};
 AudioFiles = lista_conteudo_pasta([],audioExt,[],[],'or');
 for i = 1:length(AudioFiles)
+    
+    
+    
     oriFile = AudioFiles{i};
     idxPoint = strfind(oriFile,'.');
     basename = oriFile(1:(idxPoint(end) -1));
+    try
+        AudioInfo = audioinfo(oriFile);
+        if (strcmpi(oriFile(idxPoint(end):end),'.WAV') && ...
+                (AudioInfo.BitsPerSample == 16) && ...
+                (AudioInfo.NumChannels == 1) && ...
+                (AudioInfo.SampleRate == 8000) && ...
+                strcmp(AudioInfo.CompressionMethod,'Uncompressed') )
+            fprintf('Arquivo %s adequado para comparação.\n',oriFile);
+            continue
+        end
+    catch ME
+        rethrow(ME)
+    end
+    fprintf('Adequando arquivo %s...\n',oriFile);
     conv_01 = [basename,'_PCI_8k_16.wav'];
     conv_02 = [basename,'.wav'];
     convertComand = sprintf('sox %s -e signed-integer -b 16 -r 8000 -c 1 %s > /dev/null',oriFile,conv_01);
@@ -53,8 +70,8 @@ end
 fprintf('%s\n',breakLine)
 % --- Define arquivos e diretorios de saida -------------------------------
 BOOL_RECOMPUTE_EXAM = false;
-UBM_Raw_File = '../gmmubmDATA/Raw_Data_UBM.mat';
-UBM_Data_File = '../gmmubmDATA/Base_UBM_PDR_QST.mat';
+UBM_Raw_File = '../config/gmmubmDATA/Raw_Data_UBM.mat';
+UBM_Data_File = '../config/gmmubmDATA/Base_UBM_PDR_QST.mat';
 
 OUT_DIR = './data_dir/';
 GMMUBM_FileData = [OUT_DIR,'Base_GMM.mat'];
@@ -136,14 +153,14 @@ fprintf('%s\n',breakLine);
 fprintf('Fim da comparação GMM-UBM.\n%s\n',breakLine);
 fprintf('%s\n',breakLine);
 % -------------------------------------------------------------------------
-fprintf('1.2 - Comparação por i-vector:\n');
+fprintf('1.3 - Comparação por i-vector:\n');
 fprintf('%s\n',breakLine);
 R01_Calcula_i_vectors_v0,
 fprintf('%s\n',breakLine);
 fprintf('Fim da comparação i-vector.\n%s\n',breakLine);
 fprintf('%s\n',breakLine);
 % -------------------------------------------------------------------------
-fprintf('1.3 - Comparação por fuzzy i-vector:\n');
+fprintf('1.4 - Comparação por fuzzy i-vector:\n');
 fprintf('%s\n',breakLine);
 R01_Calcula_fi_vectors_v0,
 fprintf('%s\n',breakLine);

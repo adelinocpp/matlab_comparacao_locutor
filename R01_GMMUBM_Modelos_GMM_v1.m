@@ -1,6 +1,7 @@
 close all;
 set(0, 'DefaultFigureVisible', 'off');
 % --- Adicionando caminho para a Biblioteca VoiceBox ----------------------
+addpath('../config/Bibliotecas/apstools/');
 addpath('../config/Bibliotecas/voicebox/');
 addpath('../config/Bibliotecas/MSR Identity Toolkit v1.0/code/');
 

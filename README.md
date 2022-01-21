@@ -1,6 +1,6 @@
 # Rotina unificada para comparação de locutores.
 
-Utiliza as técnicas GMM-UBM, i-vefor e fuzzy i-vector.
+Utiliza as técnicas GMM-UBM, i-vector e fuzzy i-vector.
 
 __autor:__ Adelino Pinheiro Silva\
 __email:__ adelinocpp@yahoo.com
@@ -26,7 +26,11 @@ Crie um diretório para comparação com o nome que desejar, por exemplo, "NOME_
     / - S00_Space_To_Underscore.sh
 ```
 
-descompacte o arquivo config.zip no mesmo diretŕorio de NOME_DIRETORIO, ficando
+Para executar a comparação são necessários arquivos com funçẽos auxiliares (parete do MSToolkit e voicebox) e arquivos de dados, como modelo UBM, matrix de variabildaide de locutores, modelos fuzzy de SNR, etc...
+
+Tais dados estão noa rquivo config.rar neste [link do Amazon Drive](https://www.amazon.com/clouddrive/share/lkD4eK8rLhY3vXXQX3Rg1LKLo6hQkuArhJM6zr0nDcc) e a senha para descompatar é "SPAV_ICMG_CFL#matlab@4743_adelinocpp".
+
+Descompacte o arquivo config.zip no mesmo diretŕorio de NOME_DIRETORIO, ficando
 ```
 ../config
 ../NOME_DIRETORIO

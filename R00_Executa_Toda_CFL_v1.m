@@ -33,9 +33,6 @@ audioExt = {'.3gp','.aa','.aac','.aax','.act','.aiff','.amr','.ape','.au',...
             '.vox','.wav','.wma','.wv','.webm','.8svx'};
 AudioFiles = lista_conteudo_pasta([],audioExt,[],[],'or');
 for i = 1:length(AudioFiles)
-    
-    
-    
     oriFile = AudioFiles{i};
     idxPoint = strfind(oriFile,'.');
     basename = oriFile(1:(idxPoint(end) -1));
@@ -64,24 +61,19 @@ for i = 1:length(AudioFiles)
     pause(1.5);
     system(renameComand);
 end
-% res = system('./S01_Any_Audio_To_WAV_PCM_8kHz.sh');
-
 % -------------------------------------------------------------------------
 fprintf('%s\n',breakLine)
 % --- Define arquivos e diretorios de saida -------------------------------
 BOOL_RECOMPUTE_EXAM = false;
 UBM_Raw_File = '../config/gmmubmDATA/Raw_Data_UBM.mat';
 UBM_Data_File = '../config/gmmubmDATA/Base_UBM_PDR_QST.mat';
-
 OUT_DIR = './data_dir/';
 GMMUBM_FileData = [OUT_DIR,'Base_GMM.mat'];
 GMMUBM_ConfrontFile = [OUT_DIR,'PTS_GMM_MULTI.mat'];
 iVector_FileData = [OUT_DIR,'iVectorData.mat'];
-
 if (~exist(OUT_DIR,'dir'))
     mkdir(OUT_DIR);
 end
-
 % --- Verifica arquivos de entrada ----------------------------------------
 Files = lista_conteudo_pasta([],{'.wav'});
 str_PDR_Files_Name = [];
@@ -96,19 +88,19 @@ for  i = 1:length(Files)
     boolOTR = ~isempty(strfind(Files{i}, 'OTR'));
     boolENC = ~isempty(strfind(Files{i}, 'ENC'));
     if (boolPDR)
-        str_PDR_Files_Name{end+1} = strcat(Files{i}); %#ok<SAGROW>
+        str_PDR_Files_Name{end+1} = strcat(Files{i});  %#ok<*SAGROW>
     end
     if (boolQST)
-        str_QST_Files_Name{end+1} = strcat(Files{i}); %#ok<SAGROW>
+        str_QST_Files_Name{end+1} = strcat(Files{i}); 
     end
     if (boolGSM)
-        str_GSM_Files_Name{end+1} = strcat(Files{i}); %#ok<SAGROW>
+        str_GSM_Files_Name{end+1} = strcat(Files{i}); 
     end
     if (boolOTR)
-        str_OTR_Files_Name{end+1} = strcat(Files{i}); %#ok<SAGROW>
+        str_OTR_Files_Name{end+1} = strcat(Files{i}); 
     end
     if (boolENC)
-        str_ENC_Files_Name{end+1} = strcat(Files{i}); %#ok<SAGROW>
+        str_ENC_Files_Name{end+1} = strcat(Files{i});
     end
 end
 % --- Gera GSM ------------------------------------------------------------
@@ -120,7 +112,7 @@ if (isempty(str_GSM_Files_Name))
     for  i = 1:length(Files)
         boolGSM = ~isempty(strfind(Files{i}, 'GSM'));
         if (boolGSM)
-            str_GSM_Files_Name{end+1} = strcat(Files{i}); %#ok<SAGROW>
+            str_GSM_Files_Name{end+1} = strcat(Files{i});
         end
     end
 end
@@ -136,11 +128,10 @@ if (isempty(str_ENC_Files_Name))
     for  i = 1:length(Files)
         boolGSM = ~isempty(strfind(Files{i}, 'ENC'));
         if (boolGSM)
-            str_ENC_Files_Name{end+1} = strcat(Files{i}); %#ok<SAGROW>
+            str_ENC_Files_Name{end+1} = strcat(Files{i});
         end
     end
 end
-
 % -------------------------------------------------------------------------
 fprintf('1.2 - Comparação por GMM-UBM:\n');
 fprintf('%s\n',breakLine);

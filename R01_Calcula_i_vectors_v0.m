@@ -115,7 +115,6 @@ else
                 iVectorData(iUBM).UBM = 'PDR';
             end
             
-            
             tFEAT = filtraVADbyFrame(mtxMFCC,...
                 Sample2FrameFeature(vecVAD,fs,TimeStep,TimeWindow,limiar));
             tFEAT 	= (tFEAT - selUBM.mUBM)./selUBM.sUBM;
@@ -195,10 +194,7 @@ for iUBM = 1:PARAMETROS.nUBMS
     end
     AffMtxFileName = [OUT_DIR,sprintf('iVector_MtxAfinidade_UBM_%s.pdf',UBMType)];
     affMtxTittle = sprintf('Matriz de afinidade entre os locutores - UBM: %s',UBMType);
-  
-    
     % ---------------------------------------------------------------------
-    
     [xData{1},ia] = unique(cellTippet{1}(:,2));
     yData{1} = cellTippet{1}(ia,1);
     [xData{2},ia] = unique(cellTippet{2}(:,2));
@@ -215,7 +211,6 @@ for iUBM = 1:PARAMETROS.nUBMS
     idx1 = find(diffTAX >= 0,1,'first');
     idx0 = find(diffTAX <= 0,1,'last');
     crossPoint = interp1([diffTAX(idx0),diffTAX(idx1)],[scoreDim(idx0),scoreDim(idx1)],0);
-    
     % ---------------------------------------------------------------------
     afMatrix = (ivScores(iUBM).result - xThs);
     llrLimit = max(abs(afMatrix(:)));
@@ -285,9 +280,6 @@ for iUBM = 1:PARAMETROS.nUBMS
     end
     fprintf('----------------------------------- \n');    
     fprintf(fRes,'----------------------------------- \n');  
-    
-    % ---------------------------------------------------------------------
-    
 end
 fclose(fRes);
 mFileName = split(mfilename('fullpath'),'/');

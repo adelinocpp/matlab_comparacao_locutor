@@ -38,19 +38,19 @@ else
         boolGSM = ~isempty(strfind(Files{i}, 'GSM'));
         boolENC = ~isempty(strfind(Files{i}, 'ENC'));
         if (boolPDR)
-            str_PDR_Files_Name{end+1} = strcat(Files{i}); %#ok<SAGROW>
+            str_PDR_Files_Name{end+1} = strcat(Files{i}); %#ok<*SAGROW>
         end
         if (boolQST)
-            str_QST_Files_Name{end+1} = strcat(Files{i}); %#ok<SAGROW>
+            str_QST_Files_Name{end+1} = strcat(Files{i}); 
         end
         if (boolGSM)
-            str_GSM_Files_Name{end+1} = strcat(Files{i}); %#ok<SAGROW>
+            str_GSM_Files_Name{end+1} = strcat(Files{i}); 
         end
         if (boolENC)
-            str_ENC_Files_Name{end+1} = strcat(Files{i}); %#ok<SAGROW>
+            str_ENC_Files_Name{end+1} = strcat(Files{i}); 
         end
         if (~(boolPDR || boolQST || boolGSM || boolENC))
-            str_OTR_Files_Name{end+1} = strcat(Files{i}); %#ok<SAGROW>
+            str_OTR_Files_Name{end+1} = strcat(Files{i}); 
         end
         
     end

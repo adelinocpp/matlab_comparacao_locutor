@@ -3,34 +3,9 @@ addpath('../config/Bibliotecas/apstools/');
 addpath('../config/Bibliotecas/MSR Identity Toolkit v1.0/code/');
 addpath('../config/Bibliotecas/voicebox/');
 % -------------------------------------------------------------------------
-%pwdData = split(pwd,'/');
-%fileResult = [OUT_DIR, sprintf('Resultado_%s_fivector.txt',pwdData{end})];
-% -------------------------------------------------------------------------
-%if (exist(fileResult,'file')  && ~BOOL_RECOMPUTE_EXAM)
-%    fprintf('Arquivo %s já existe. Etapa já realizada.\nPara realizar novamente esta etapa remova-o\nou indique a variável BOOL_RECOMPUTE_EXAM para true.\n',fileResult)
-%    return,
-%end
-%fRes = fopen(fileResult,'w+');
-% -------------------------------------------------------------------------
 DATA_DIR = '../config/fivectorDATA/';
-
 % -------------------------------------------------------------------------
 load([DATA_DIR,'PARAMETROS.mat']);
-% -------------------------------------------------------------------------
-% load([DATA_DIR,'UBM_GSM_fuzzy.mat']);
-% load([DATA_DIR,'Tmatrix_GSM_fuzzy.mat']);
-% load([DATA_DIR,'GSM_IVs_fuzzy.mat']);
-%     UBM_CELL        = UBM_GSM_CELL;
-%     Tmatrix_CELL    = Tmatrix_GSM_CELL;
-%     IVs_WHITEN      = GSM_IVs_WHITEN;
-    %clear UBM_GSM_CELL Tmatrix_GSM_CELL GSM_IVs_WHITEN;
-% load([DATA_DIR,'UBM_PDR_fuzzy.mat']);
-% load([DATA_DIR,'Tmatrix_PDR_fuzzy.mat']);
-% load([DATA_DIR,'PDR_IVs_fuzzy.mat']);
-%     UBM_CELL        = UBM_PDR_CELL;
-%     Tmatrix_CELL    = Tmatrix_PDR_CELL;
-%     IVs_WHITEN      = PDR_IVs_WHITEN;
-    %clear UBM_PDR_CELL Tmatrix_PDR_CELL PDR_IVs_WHITEN;
 % -------------------------------------------------------------------------
 load([DATA_DIR,'DadosFuzzy.mat']);
 load([DATA_DIR,'SNR_Classes.mat']);
@@ -107,11 +82,6 @@ else
         fiVectorData = struct;
         for iUBM = 1:PARAMETROS.nUBMS
             if (iUBM == 1)
-                %                 load([DATA_DIR,'GSM_IVs.mat']);
-                %                 selUBM  = UBM(2);
-                %                 selT    = Tgsm;
-                %                 selMU   = muGSM;
-                %                 selMAT  = whMatGSM;
                 load([DATA_DIR,'UBM_GSM_fuzzy.mat']);
                 load([DATA_DIR,'Tmatrix_GSM_fuzzy.mat']);
                 load([DATA_DIR,'GSM_IVs_fuzzy.mat']);
@@ -121,11 +91,6 @@ else
                 fiVectorData(iUBM).UBM = 'GSM';
                 clear UBM_GSM_CELL Tmatrix_GSM_CELL GSM_IVs_WHITEN;
             else
-                %                 load([DATA_DIR,'PDR_IVs.mat']);
-%                 selUBM  = UBM(1); %#ok<*UNRCH>
-%                 selT    = Tpdr;
-%                 selMU   = muPDR;
-%                 selMAT  = whMatPDR;
                 load([DATA_DIR,'UBM_PDR_fuzzy.mat']);
                 load([DATA_DIR,'Tmatrix_PDR_fuzzy.mat']);
                 load([DATA_DIR,'PDR_IVs_fuzzy.mat']);
@@ -138,8 +103,7 @@ else
             % --- ETAPA fuzzy-S2NR ------------------------------------------------
             for iFc = 1:DadosFuzzy.Num_Class
                 UBM = UBM_CELL{iFc};
-                Tmtx = Tmatrix_CELL{iFc};
-                
+                Tmtx = Tmatrix_CELL{iFc};                
                 meanUBM 	= UBM.mUBM;
                 stdUBM 		= UBM.sUBM;
                 mfccUBM 	= UBM.mfcc;
@@ -160,7 +124,6 @@ else
                 tFEAT = (mtxMFCC(:,idx) - meanUBM)./stdUBM;
                 [N,F] 	= compute_fuzzy_bw_stats(tFEAT, mtxPert(:,idx), iFc, mfccUBM);
                 IVtemp 	= extract_ivector([N; F], UBM.mfcc, Tmtx);
-%                 str_Files(i).iVector{iFc} 		= MatrixWhiten(IVtemp',selMU,selMAT)';
                 fiVectorData(iUBM).iVector{iFc} 		= MatrixWhiten(IVtemp',selMU,selMAT)';
             end
             str_Files(i).fiVectorData = fiVectorData;

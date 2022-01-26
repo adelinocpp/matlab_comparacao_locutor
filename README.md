@@ -1,6 +1,6 @@
 # Rotina unificada para comparação de locutores.
 
-Utiliza as técnicas GMM-UBM, i-vector e ~~~fuzzy i-vector~~~.
+Utiliza as técnicas GMM-UBM, i-vector e fuzzy i-vector.
 
 __autor:__ Adelino Pinheiro Silva\
 __email:__ adelinocpp@yahoo.com
